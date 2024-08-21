@@ -33,7 +33,7 @@ page 50100 "API - Posted S. Invoice B64"
     begin
         if Rec.Count > 1 then
             Error('Specify Invoice ID.');
-        ReportSelections.GetPdfReportForCust(TempBlob, Enum::"Report Selection Usage"::"S.Invoice", Rec, Rec."Sell-to Customer No.");
+        ReportSelections.GetPdfReportForCust(TempBlob, Enum::"Report Selection Usage"::"S.Invoice", Rec, Rec."Bill-to Customer No.");
         TempBlob.CreateInStream(InStr);
         Base64 := Base64Convert.ToBase64(InStr);
     end;
